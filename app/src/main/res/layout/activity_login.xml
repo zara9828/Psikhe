@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +7,7 @@
     tools:context=".login">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -28,32 +28,33 @@
             android:layout_below="@+id/kupu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
+            android:fontFamily="monospace"
             android:text="LOGIN"
             android:textColor="@color/black"
             android:textSize="30dp"
-            android:textStyle="bold"
-            android:fontFamily="monospace"/>
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:layout_below="@+id/text1"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:hint="Username" />
+            android:hint="Username"
+            android:maxLines="1" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:layout_below="@+id/username"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:hint="Password" />
+            android:hint="Password"
+            android:maxLines="1" />
 
         <Button
             android:id="@+id/loginbtn"
@@ -61,17 +62,27 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/password"
             android:layout_marginTop="40dp"
-            android:text="Login"/>
+            android:text="Login" />
 
         <Button
             android:id="@+id/regisbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/password"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="100dp"
-            android:text="Register"/>
+            android:layout_marginTop="40dp"
+            android:text="Register" />
 
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     Databasehelper db;
     Button  register;
     EditText username, password, email;
@@ -34,7 +34,7 @@ public class register extends AppCompatActivity {
                 Boolean daftar = db.insertUser(strUsername, strPassword);
                 if (daftar == true) {
                     Toast.makeText(getApplicationContext(), "Daftar Berhasil", Toast.LENGTH_SHORT).show();
-                    Intent loginIntent = new Intent(register.this, login.class);
+                    Intent loginIntent = new Intent(RegisterActivity.this, login.class);
                     startActivity(loginIntent);
                     finish();
                 } else {
